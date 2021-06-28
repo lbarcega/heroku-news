@@ -18,8 +18,8 @@ class News extends CI_Controller {
        		$this->load->view('templates/footer');
         }
 
-	public function view($slug = NULL)
-	{
+		public function view($slug = NULL)
+		{
 			$data['news_item'] = $this->news_model->get_news($slug);
 
 			if (empty($data['news_item']))
@@ -33,4 +33,14 @@ class News extends CI_Controller {
 			$this->load->view('news/view', $data);
 			$this->load->view('templates/footer');
 		}
+		
+		public function vanillaget()
+		{
+				$this->load->view('news/vanillaget');
+		}
+
+		public function fetchget()
+		{
+				$this->load->view('news/fetchget');
+		}		
 }
